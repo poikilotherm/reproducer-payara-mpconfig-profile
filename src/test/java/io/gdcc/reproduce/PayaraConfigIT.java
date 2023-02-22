@@ -43,10 +43,12 @@ class PayaraConfigIT {
     @Test
     void sysPropOverridesMpcFile() {
         assertEquals("override", sut.getSetting());
+        assertEquals("SystemProperty", sut.getSettingSource());
     }
     
     @Test
     void sysPropOverridesProfiledMpcFile() {
         assertEquals("override", sut.getSetting3());
+        assertEquals("SystemProperty", sut.getSetting3Source());
     }
 }

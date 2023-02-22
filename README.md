@@ -58,9 +58,14 @@ This managed server will not have an active profile. As a consequence, if the bu
 retrieving `test.setting.2` would return the value from the properties file (`barbecue`).
 If the bug is not present, it would throw a `NoSuchElementException`.
 
-The `system-properties.properties` file sets `test.setting` and `test.setting.3`. If the bug is present,
-`test.setting.3`, which has a `%testprofile.test.setting.3` in `microprofile-config.properties`,
-would not be overridden.
+The `system-properties.properties` file makes `test.setting` and `test.setting.3` system properties. If the bug is 
+present, `test.setting.3`, which has a `%testprofile.test.setting.3` in `microprofile-config.properties`, would not
+be overridden. (The spec says: *Conforming implementations are required to search for a configuration source with 
+the highest ordinal (priority) that provides either the property name or the "profile-specific" property name.
+If the configuration source provides the "profile-specific" name, the value of the "profile-specific" property will be
+returned. If it doesn’t contain the "profile-specific" name, the value of the plain property will be returned.* That
+means, if there is a source providing an unprofiled setting with a higher ordinal, it will win
+over `microprofile-config.properties`.)
 
 Both cases are working as expected, no bug present.
 
