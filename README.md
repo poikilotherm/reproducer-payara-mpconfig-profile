@@ -44,6 +44,8 @@ These tests ensure:
 
 This works as expected, thus marking a baseline.
 
+Execute these tests with `mvn test` (or as part of `mvn verify`).
+
 ### Arquillian Managed Payara
 
 As a next step, there is an Arquillian test in place. It starts a Payara application server and deploys
@@ -62,3 +64,4 @@ would not be overridden.
 
 Both cases are working as expected, no bug present.
 
+Execute these tests via `mvn verify`.
