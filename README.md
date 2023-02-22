@@ -31,8 +31,8 @@ There are 3 settings that the `TestMpConfig` class retrieves in three different 
 
 ### Baseline
 
-To create a baseline, there are unit tests in place, using SmallRye Config (not Payara) as a reference point:
-`TestMpConfigTest` and `ProfiledTestMpConfigTest`.
+To create a baseline, there are unit tests in place, using [SmallRye Config](https://smallrye.io/smallrye-config)
+(not Payara) as a reference point: `TestMpConfigTest` and `ProfiledTestMpConfigTest`.
 
 These tests ensure:
 - `test.setting` is retrieved without a profile and no system property from the properties file
